@@ -1,0 +1,8 @@
+---
+- name: APPLY ROLES TO HOSTS
+  hosts: servers
+  become: yes
+  become_method: sudo
+  roles:
+    - user
+    - string_compress

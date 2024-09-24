@@ -1,0 +1,4 @@
+---
+- name: COMPRESS STRING
+  debug:
+    msg: "{{ input_string | compress }}"
