@@ -1,4 +1,4 @@
 ---
 - name: COMPRESS STRING
-  debug:
-    msg: "{{ input_string | compress }}"
+  ansible.builtin.debug:
+    msg: "{{ string_compress_input_string | compress }}"

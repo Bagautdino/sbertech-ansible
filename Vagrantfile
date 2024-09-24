@@ -1,3 +1,5 @@
+ENV['ANSIBLE_CONFIG'] = "ansible.cfg"
+
 Vagrant.configure("2") do |config|
   config.vm.provider :utm do |u|
     u.utm_file_url = "https://github.com/naveenrajm7/utm-box/releases/download/debian-11/debian_vagrant_utm.zip"
@@ -15,6 +17,7 @@ Vagrant.configure("2") do |config|
   # Провиженинг с использованием Ansible
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "playbooks/site.yml"
+    ansible.inventory_path = "inventory/hosts"
     ansible.verbose = "vvv"
   end
 end

@@ -1,8 +1,8 @@
 ---
 - name: APPLY ROLES TO HOSTS
   hosts: servers
-  become: yes
-  become_method: sudo
+  become: true
+  become_method: ansible.builtin.sudo
   roles:
     - user
     - string_compress
