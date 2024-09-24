@@ -1,0 +1,5 @@
+---
+- name: COMPRESS STRINGS IN HOSTS
+  hosts: servers
+  roles:
+    - string_compress

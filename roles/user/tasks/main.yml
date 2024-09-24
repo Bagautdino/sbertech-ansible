@@ -1,0 +1,15 @@
+---
+- name: CREATE USER WITH PASSWORD
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    password: "{{ user_password }}"
+    shell: /bin/bash
+
+- name: ADD SODUERS DIR FOR USER
+  ansible.builtin.copy:
+    dest: "/etc/sudoers.d/{{ user_name }}"
+    content: "{{ user_name }} ALL=(ALL) NOPASSWD: ALL"
+    owner: root
+    group: root
+    mode: '0440'
+    validate: "visudo -cf %s"
