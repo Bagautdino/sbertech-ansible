@@ -53,4 +53,5 @@ jobs:
 #
 #      - name: Run Ansible Playbook
 #        run: |
-#          ansible-playbook playbooks/add_user.yml -i inventory/hosts --check --diff
+#          ansible-playbook playbooks/add_user.yml -i inventory/hosts \
+#           --check --diff
