@@ -10,11 +10,10 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", create: true
   config.ssh.username = "debian"
   config.ssh.insert_key = true
+  config.ssh.private_key_path = "~/.ssh/id_rsa"
 
-  # Проброс порта SSH для доступа Ansible
   config.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh"
 
-  # Провиженинг с использованием Ansible
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "playbooks/site.yml"
     ansible.inventory_path = "inventory/hosts"
