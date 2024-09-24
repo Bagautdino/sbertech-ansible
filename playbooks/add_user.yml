@@ -6,6 +6,7 @@
   vars_files:
     - vault.yml
 #  vars:
-#    ansible_become_password: "{{ ansible_become_pass }}"
+#    ansible_become_password: "{{ ansible_become_pass }}" # VAULT
+#    user_password: "{{ user_password_plain | password_hash('sha512') }}" # VAULT
   roles:
     - user
