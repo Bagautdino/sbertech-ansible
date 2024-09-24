@@ -1,3 +1,6 @@
 ---
 user_name: "user"
 user_password: "{{ 'qweASD!@#' | password_hash('sha512') }}"
+
+#user_password: "{{ default_user_password }}" VAULT
+
